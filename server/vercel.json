@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "name": "audiufy-api",
+  "builds": [
+    {
+      "src": "src/index.js",
+      "use": "@now/node-server"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "src/index.js"
+    }
+  ],
+  "alias": ["audiufy-api"],
+  "env": {
+    "NODE_ENV": "production",
+    "PORT": "1337",
+    "CORS_ORIGIN": "https://audiufy.vercel.app",
+    "REDIRECT_URI": "https://audiufy-api.vercel.app/api/v1/spotify/callback/"
+  }
+}
